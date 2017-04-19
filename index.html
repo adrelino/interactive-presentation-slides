@@ -24,8 +24,89 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+			<!-- slide 1 -->
+			<section data-markdown><script type="text/template">
+				## Creating interactive presentation slides for the browser
+				with HTML & JavaScript  
+				Chrome DevTools, DevTools Workspaces
+
+				<small>
+					NavVis Workshop on April 19th, 2017<br>
+					by Adrian Haarbach
+				</small>
+			</script></section>
+
+			<!-- slide 2 -->
+			<section>
+				<h2>Overview</h2>
+				<ol>
+					<li><a href="demo.html">reveal.js/demo</a><br><small>all features</small></li>
+					<li>This webpage<br><small>basics</small></li>
+					<li><a href="http://www.adrian-haarbach.de/idp-graph-algorithms/presentation/slides.html#/2/10">idp</a><br>
+						<small>syntax highlighting, eval() js code for d3 introduction</small></li>
+					<li><a href="http://static.adrian-haarbach.de/mscthesis_adrian_slides/index.html#/4/3">msc</a><br>
+						<small>interactive svg, latex \newcommand formulas, embed videos</small></li>
+				</ol>
+			</section>
+
+			<!-- slide 3 -->
+			<section>
+				<h2>HTML slide</h2>
+				Best features of using reveal.js for presentations
+				<ol>
+				  <li>HTML+JS+CSS, HTML5 (Video, Audio)</li>
+				  <li>Markdown</li>
+				  <li>highlight.js</li>
+				  <li>MathJax \(E(x) = \sum_{i=0}^N \| \lambda x\|^2\)</li>
+				</ol>
+				<pre><code data-trim>
+				<h2>HTML slide</h2>
+				Best features of using reveal.js for presentations
+				<ol>
+				  <li>HTML+JS+CSS, HTML5 (Video, Audio)</li>
+				  <li>Markdown</li>
+				  <li>highlight.js</li>
+				  <li>MathJax \(E(x) = \sum_{i=0}^N \| \lambda x\|^2\)</li>
+				</ol>
+				</code>
+				</pre>
+			</section>
+
+			<!-- slide 4 -->
+			<section data-markdown><script type="text/template">
+				## Markdown slide
+				* foo
+				* bar
+
+				Normal *kursiv*  **fett**
+
+				```markdown
+				<section data-markdown>
+				## Markdown slide
+				* foo
+				* bar
+
+				Normal *kursiv*  **fett**
+				</section>
+				```
+			</script></section>
+
+			<!-- slide 5 -->
+			<section data-markdown><script type="text/template">
+				## Images
+				```
+				scaled using html:  
+				<img src="https://www.navvis.com/img/logo_black.png" width=100px/>  
+				unscaled using Markdown:
+				![NavVis](https://www.navvis.com/img/logo_black.png)
+				```
+				scaled using html:  
+				<img src="https://www.navvis.com/img/logo_black.png" width=100px/>  
+				unscaled using Markdown:
+				![NavVis](https://www.navvis.com/img/logo_black.png)
+			</script></section>
+
 			</div>
 		</div>
 
@@ -41,6 +122,7 @@
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/math/math.js', async:true},
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
